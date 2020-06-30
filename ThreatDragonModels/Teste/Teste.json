@@ -8,9 +8,131 @@
     "contributors": [],
     "diagrams": [
       {
-        "title": "Diagrama 1",
+        "title": "Serviço pagamento",
         "thumbnail": "./public/content/images/thumbnail.jpg",
-        "id": 0
+        "id": 0,
+        "diagramJson": {
+          "cells": [
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 47,
+                "y": 44
+              },
+              "angle": 0,
+              "id": "ffa8b091-d42e-4f97-ab84-cff5c83322b5",
+              "z": 1,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "title": "Sql Injection",
+                  "type": "Spoofing",
+                  "description": "Através da exposição desnecessária de informações do sistema um atacante consegue manipular as informações para obter dados do sistema.",
+                  "mitigation": "Sanitizar input"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "title": "Brute Force",
+                  "type": "Spoofing",
+                  "description": "Um atacante pode fazer um ataque de dicionário, uma vez que não há quotas ou algum desafio que trate com complexidade crescente requests sequenciais com falha.",
+                  "mitigation": "- Implementar quotas\n- ReCaptcha v3, que é inobstrusivo\n- Generalizar tratamento para credenciais incorretas"
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Login"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 318,
+                "y": 45
+              },
+              "angle": 0,
+              "id": "0344aa9c-587f-4a98-afed-8dedf9280799",
+              "z": 4,
+              "hasOpenThreats": false,
+              "threats": [],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Redirect\nextrato\nfinanceiro"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "ffa8b091-d42e-4f97-ab84-cff5c83322b5"
+              },
+              "target": {
+                "id": "0344aa9c-587f-4a98-afed-8dedf9280799"
+              },
+              "vertices": [],
+              "id": "42b796eb-ffb1-42ba-99f0-47eb57dd62f8",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Redirect extrato\nfinanceiro",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 5,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "Um atacante que consiga se infiltrar na rede, em laboratórios ou principalmente wireless, pode potencialmente atuar como um MITM (Man In The Middle) e capturar o token de sessão.",
+                  "title": "Sequestro de sessão",
+                  "type": "Spoofing"
+                }
+              ],
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasOpenThreats isInScope"
+                }
+              }
+            }
+          ]
+        },
+        "size": {
+          "height": 590,
+          "width": 790
+        }
       }
     ]
   }
